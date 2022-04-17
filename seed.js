@@ -2,8 +2,8 @@ var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb://127.0.0.1:27017/db_staycation', function () {
-
+// seeder.connect('mongodb://127.0.0.1:27017/db_staycation', function () {
+seeder.connect('mongodb+srv://admin:1234567890@cluster0.gwivf.mongodb.net/db_staycation?retryWrites=true&w=majority', function () {
   // Load Mongoose models
   seeder.loadModels([
     './models/Category',
