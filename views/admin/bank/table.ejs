@@ -26,7 +26,7 @@
                 <td><%= bank.nameBank %> </td>
                 <td><%= bank.nomorRekening %> </td>
                 <td><%= bank.name %> </td>
-                <td> <img src="http://localhost:3001/<%= bank.imageUrl %>" alt="" height="70px" width="70px">  </td>
+                <td> <img src="https://ihsan-staycation.herokuapp.com/<%= bank.imageUrl %>" alt="" height="70px" width="70px">  </td>
                 <td>
                   <form method="POST" class="form-inline" action="/admin/bank/<%= bank.id %>?_method=DELETE">
                     <a href="javascript:void();" type="button" class="btn btn-warning btn-circle btn-sm btn-update mx-2" data-id="<%= bank.id %>" data-name="<%= bank.name %>" data-bank="<%= bank.bank %>" data-rekening="<%= bank.rekening %>"><i class="fas fa-edit"></i></a>

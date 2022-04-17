@@ -8,7 +8,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-4">
-                <img src="http://localhost:3001/<%= booking.payments.proofPayment %>" alt=""  width="100%">
+                <img src="https://ihsan-staycation.herokuapp.com/<%= booking.payments.proofPayment %>" alt=""  width="100%">
                 <div class="row ml-2 mt-3">
                     <% if (booking.payments.status == 'Proses') { %>
                         <form method="POST" class="form-inline" action="/admin/booking/<%= booking.id %>/confirm?_method=PUT">
