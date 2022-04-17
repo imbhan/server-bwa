@@ -1,0 +1,67 @@
+<div class="tab-pane fade <%= alert.active == 'activity' ? 'show active' : '' %>" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <form method="post" action="/admin/item/activity/add" enctype="multipart/form-data">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" class="form-control" required  placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type</label>
+                            <input type="text" name="type" id="type" class="form-control" required  placeholder="Enter Type">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Image</label>
+                            <input type="file" name="image" id="name" class="form-control" >
+                        </div>
+                        <input type="hidden" name="id" id="id" value="<%= itemId %>">
+                        <button type="submit" class="btn btn-primary"  style="float: right;">Save</button>
+                        
+                    </form>
+                </div>
+                <div class="col-md-7">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tabel-activity" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Image</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var no =1 ; activities.forEach(activity => { %>
+                                <tr>
+                                    <td><%= no++ %> </td>
+                                    <td><%= activity.name %> </td>
+                                    <td><%= activity.type %> </td>
+                                    <td><img src="http://localhost:3001/<%= activity.imageUrl %>" alt="" height="70px" width="70px"> </td>
+                                    <td>
+                                       <form method="POST" class="form-inline" action="/admin/item/activity/delete/<%= activity.id %>/<%= itemId %>?_method=DELETE">
+                                           <a type="button"  class="btn btn-warning btn-circle btn-sm activity-update mx-2" 
+                                           data-id="<%= activity.id %>"
+                                           data-name="<%= activity.name %>"
+                                           data-type="<%= activity.type %>"
+                                           ><i class="fas fa-edit"></i></a>
+                                           <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                                       </form>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+    

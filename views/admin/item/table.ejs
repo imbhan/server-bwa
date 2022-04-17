@@ -1,0 +1,43 @@
+<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+                <th>No</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var a = 1; items.forEach(item => { %>
+              <tr>
+                <td><%= a++ %></td>
+                <td><%= item.title %></td>
+                <td>$ <%= item.price %></td>
+                <td><%= item.city %></td>
+                <td><%= item.country %></td>
+                <td>
+                  <form method="POST" class="form-inline" action="/admin/item/<%= item.id %>?_method=DELETE">
+                    <a href="/admin/item/show-image/<%= item.id %>" class="btn btn-info btn-circle btn-sm "><i class="fas fa-image"></i></a>
+                    <a href="/admin/item/<%= item.id %>" class="btn btn-warning btn-circle btn-sm btn-update mx-2"><i class="fas fa-edit"></i></a>
+                    <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                    <a href="/admin/item/detail/<%= item.id %>" class="btn btn-success btn-circle btn-sm mx-2"><i class="fas fa-plus"></i></a>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+  

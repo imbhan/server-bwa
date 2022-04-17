@@ -1,0 +1,38 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Category</h6>
+      <button type="button" class="btn btn-primary float-right mt--2 btn-sm" data-toggle="modal" data-target="#add" style="margin-top: -20px;">
+        <i class="fas fa-plus"></i>  Add Category
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var a = 1; %> 
+            <% categories.forEach(category => { %>
+              <tr>
+                <td><%= a++ %> </td>
+                <td><%= category.name %> </td>
+                <td>
+                  <form method="POST" class="form-inline" action="/admin/category/<%= category.id %>?_method=DELETE">
+                    <a href="javascript:void();" type="button" class="btn btn-warning btn-circle btn-sm btn-update mx-2" data-id="<%= category.id %>" data-name="<%= category.name %> "><i class="fas fa-edit"></i></a>
+                    <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+
+<!-- Modal -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editLabel">Edit Bank</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="/admin/bank?_method=PUT"  enctype="multipart/form-data">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Name Bank</label>
+            <input type="text" name="bank" id="name" class="form-control bank" required  placeholder="Name Bank">
+          </div>
+          <div class="form-group">
+            <label for="name">Nomor Rekening</label>
+            <input type="text" name="nomorrekeneing" id="name" class="form-control rekening" required  placeholder="Nomor Rekening">
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control name" required  placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="name">Image</label>
+            <input type="file" name="image" id="name" class="form-control" >
+            <span>Pilih ganbar untuk update image</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" name="id" class="id">
+          <button type="submit" class="btn btn-primary">Edit Bank</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
